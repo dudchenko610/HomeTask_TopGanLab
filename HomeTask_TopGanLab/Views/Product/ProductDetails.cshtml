@@ -1,0 +1,24 @@
+﻿@model Product
+
+<table class="table table-striped referenS" >
+    <tr>
+        <th>Название</th>
+        <th>Количество</th>
+        <th>Ус. единиц</th>
+
+    </tr>
+    
+    <tr>
+
+        <td id="referensOnProfile">@Model.Name</td>
+        <td id="referensOnProfile">@Model.Size</td>
+        <td id="referensOnProfile">@Model.SizeType.GetDescription()</td>
+
+    </tr>
+    
+</table>
+
+    <div>
+        <a id="add-cart-style-list" class="btn btn-success" asp-controller="Product" asp-action="EditProduct" asp-route-productId="@Model.Id">Редактировать</a>
+        <a id="add-cart-style-list" class="btn btn-danger" asp-controller="Product" asp-action="RemoveProduct" asp-route-productId="@Model.Id">Удалить</a>
+    </div>

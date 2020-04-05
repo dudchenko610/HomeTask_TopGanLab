@@ -1,0 +1,16 @@
+﻿@model List<Product>
+
+@{
+    ViewData["Title"] = typeof (Controller).Assembly.GetName().Version;
+}
+
+<div class="list-group">
+
+    @foreach(Product product in Model)
+    {
+        <a asp-controller="Product" asp-action="ProductDetails" asp-route-productId="@product.Id"  class="list-group-item list-group-item-action">@product.Name</a>
+    }
+
+    <a id="add-cart-style-list" class="btn btn-success" asp-controller="Product" asp-action="AddProduct" >Добавить продукт</a>
+
+</div>
